@@ -136,7 +136,7 @@ def run_transcription(
     """
     # DB 세션은 함수 내에서 생성 (백그라운드 스레드이므로)
     from app.database import SessionLocal
-    from app.models import Document  # 기존 Document 모델 사용
+    from app.models import Document, SourceType  # 기존 Document 모델 사용
 
     db = SessionLocal()
 
@@ -205,7 +205,7 @@ def run_transcription(
             owner_id=owner_id,
             title=f"{meeting_title} - 회의록",
             content=full_text,
-            source_type="meeting_transcript",
+            source_type=SourceType.meeting_transcript,
         )
         db.add(doc)
         db.commit()

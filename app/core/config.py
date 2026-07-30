@@ -8,6 +8,16 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440  # 기본값 1일 (분 단위)
     GEMINI_API_KEY: str = ""
 
+    # ── Audio / WhisperX (C 담당) ──
+    UPLOAD_DIR: str = "data/uploads"
+    WHISPER_MODEL: str = "medium"
+    WHISPER_LANGUAGE: str = "ko"
+    WHISPER_DEVICE: str = "cpu"
+    HF_TOKEN: str = ""
+    ENABLE_DIARIZATION: bool = False
+    MAX_AUDIO_SIZE_MB: int = 500
+    ALLOWED_AUDIO_EXTENSIONS: str = ".mp3,.wav,.m4a,.webm,.ogg,.flac"
+
     # .env 파일을 최우선으로 읽어오도록 설정
     model_config = SettingsConfigDict(
         env_file=".env",

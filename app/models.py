@@ -36,4 +36,4 @@ class Document(Base):
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
 
     owner = relationship("User", back_populates="documents")
-    children = relationship("Document", backref="parent", remote_side=[id], cascade="all, delete-orphan")
+    children = relationship("Document", backref="parent", remote_side=[id], cascade="all, delete-orphan", single_parent=True)

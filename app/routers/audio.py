@@ -12,13 +12,11 @@ import uuid
 
 from fastapi import APIRouter, UploadFile, File, Form, BackgroundTasks, HTTPException
 
-from app.core.config import get_settings
+from app.core.config import settings
 from app.services.audio_preprocessor import validate_audio_file
 from app.services.transcriber import run_transcription, get_job_status, job_status
 
 router = APIRouter(prefix="/api/audio", tags=["Audio"])
-
-settings = get_settings()
 
 
 @router.post("/upload")
