@@ -1,0 +1,47 @@
+# ============================================================
+# .gitignore — 회의록 자동화 프로젝트
+# ============================================================
+
+# ----- 환경 변수 / 시크릿 -----
+.env
+*.pem
+
+# ----- Python -----
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# ----- 업로드 / 데이터 -----
+data/uploads/
+data/chroma/
+*.db
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.flac
+
+# ----- 모델 캐시 -----
+models/
+*.pt
+*.bin
+
+# ----- IDE -----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----- OS -----
+.DS_Store
+Thumbs.db
+
+# ----- 로그 -----
+*.log
+logs/

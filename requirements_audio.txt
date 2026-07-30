@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+# ── Audio / WhisperX (C 담당) ──
+# 기존 requirements.txt 에 아래를 추가하세요.
+
+whisperx                # STT + 화자분리 올인원
+ffmpeg-python           # ffmpeg 파이썬 바인딩 (선택, subprocess 직접 호출도 가능)
+
+# 시스템 레벨 설치 필요:
+# Ubuntu:  sudo apt install ffmpeg
+# Mac:     brew install ffmpeg
+# Windows: choco install ffmpeg  (또는 수동 설치)
+
+# HuggingFace 라이선스 동의 필요 (무료):
+# 1. https://huggingface.co/pyannote/speaker-diarization-3.1
+# 2. https://huggingface.co/pyannote/segmentation-3.0
